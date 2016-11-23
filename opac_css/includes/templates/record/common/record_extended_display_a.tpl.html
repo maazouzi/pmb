@@ -1,0 +1,74 @@
+{% extends 'record_extended_display.tpl.html' %}
+
+{% block record_content %}
+	<table class="descr_notice">
+		<tbody>
+			<tr>
+				<td class="labelNot">
+					<span>{{ msg.tit1display_start }}</span>
+				</td>
+				<td>
+					<span id="exempl_titleNot">{{ record.tit1 }} ({{ record.year }})</span>
+				</td>
+			</tr>
+			{% for auteur in record.responsabilites.auteurs %}
+				{% if loop.first %}
+					<tr>
+						<td class="labelNot">
+							<span>{{ msg.auteur_start }}</span>
+						</td>
+						<td>
+							<span>
+				{% else %}
+				 ; 
+				{% endif %}
+				<a href="{{ record.liens_opac.lien_rech_auteur | replace '!!id!!' auteur.id }}" title="{{ auteur.auteur_titre }}">{{ auteur.auteur_titre }}</a>{% if auteur.fonction_aff %}, {{ auteur.fonction_aff }}{% endif %}
+				{% if loop.last %}
+							</span>
+						</td>
+					</tr>
+				{% endif %}
+			{% endfor %}
+			{% if record.biblio_doc %}
+				<tr>
+					<td class="labelNot">
+						<span>{{ msg.typdocdisplay_start }}</span> <!-- Type de document-->
+					</td>
+					<td>
+						<span>{{ record.biblio_doc }}</span>
+					</td>
+				</tr>
+			{% endif %}
+			{% if record.bul_info.bulletin_id %}
+				<tr>
+					<td class="labelNot">
+						<span>{{ msg.dans_start }} :</span> <!-- Titre du périodique-->
+					</td>
+					<td>
+						<span><a href="{{ record.liens_opac.lien_rech_bulletin | replace '!!id!!' record.bul_info.bulletin_id }}" title="{{ record.bul_info.title }} ({{ record.bul_info.numero }} {{ record.bul_info.date }})">{{ record.bul_info.title }} ({{ record.bul_info.numero }} {{ record.bul_info.date }})</a></span>
+					</td>
+				</tr>
+			{% endif %}
+			{% if record.resume %}
+				<tr>
+					<td class="labelNot">
+						<span>{{ msg.n_resume_start }}</span>
+					</td>
+					<td>
+						<span>{{ record.resume | nl2br }}</span>
+					</td>
+				</tr>
+			{% endif %}
+			{% if record.contenu %}
+			<tr>
+				<td class="labelNot">
+					<span>{{ msg.n_contenu_start }}</span>
+				</td>
+				<td>
+					<span>{{ record.contenu | nl2br }}</span>
+				</td>
+			</tr>
+			{% endif %}
+		</tbody>
+	</table>
+{% endblock record_content %}

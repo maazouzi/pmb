@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- 
+****************************************************************************************
+© 2002-2004 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+****************************************************************************************
+$Id: template.xml,v 1.4 2015-06-15 12:55:34 pmbs Exp $ -->
+<template default_lang='fr_FR'>
+	<content lang='fr_FR'><![CDATA[
+		<h2>Bannettes</h2>
+		<div class='row'>
+			<div class='title'>Total : </div>
+			<div class='value'>{{nb_bannettes.0.total}}</div>
+		</div>
+		<div class='row'>
+			<div class='title'>dont à diffuser : </div>
+			<div class='value'>{{nb_bannettes_diff.0.total}}</div>
+		</div>
+		<div class='row'>&nbsp;</div>
+		]]>
+	</content>
+	
+	<content lang='en_UK'><![CDATA[
+		<h2>SDI Baskets</h2>
+		<div class='row'>
+			<div class='title'>Amount : </div>
+			<div class='value'>{{nb_bannettes.0.total}}</div>
+		</div>
+		<div class='row'>
+			<div class='title'>of which to diffuse : </div>
+			<div class='value'>{{nb_bannettes_diff.0.total}}</div>
+		</div>
+		<div class='row'>&nbsp;</div>
+		]]>
+	</content>
+</template>

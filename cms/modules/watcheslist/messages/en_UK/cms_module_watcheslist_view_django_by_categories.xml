@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE XMLlist SYSTEM "../XMLlist.dtd" [<!ENTITY nbsp "&amp;nbsp;">]>
+
+<!-- messages localisés en français pour la classe datasource
+****************************************************************************************
+© 2002-2012 PMB Services / www.sigb.net pmb@sigb.net et contributeurs (voir www.sigb.net)
+****************************************************************************************
+$Id: cms_module_watcheslist_view_django_by_categories.xml,v 1.1 2015-06-15 12:55:33 pmbs Exp $ -->
+
+<XMLlist>
+	<entry code="cms_module_watcheslist_view_django_by_categories_categories_desc">Table of sortings</entry>
+	<entry code="cms_module_watcheslist_view_django_by_categories_categories_id_desc">Sorting identifier</entry>
+	<entry code="cms_module_watcheslist_view_django_by_categories_categories_title_desc">Sorting name</entry>
+	<entry code="cms_module_watcheslist_view_django_by_categories_categories_watches_desc">Table of watches linked to this sorting</entry>
+	<entry code="cms_module_watcheslist_view_django_by_categories_categories_children_desc">Children sortings (The data structure is the same as the one of the sorting table et recursive)</entry>
+	<entry code="cms_module_watcheslist_view_django_by_categories_watches_desc">Table of unsorted watches</entry>
+</XMLlist>
